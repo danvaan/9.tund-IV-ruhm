@@ -7,7 +7,7 @@
 	// saab kasutada nüüd $_SESSION muutujat
 	session_start();
 	
-	$database = "if16_romil";
+	$database = "if16_danvaan";
 	// functions.php
 	
 	function signup($email, $password) {
@@ -114,6 +114,7 @@
 		$stmt = $mysqli->prepare("
 			SELECT id, age, color
 			FROM whistle
+			WHERE deleted IS NULL
 		");
 		$stmt->bind_result($id, $age, $color);
 		$stmt->execute();

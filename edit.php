@@ -3,6 +3,11 @@
 	require("functions.php");
 	require("editFunctions.php");
 	
+	if(isset($_GET["delete"])){
+		deletePerson ($_GET["id"]);
+		
+	}
+	
 	//kas kasutaja uuendab andmeid
 	if(isset($_POST["update"])){
 		
@@ -32,3 +37,6 @@
   	
 	<input type="submit" name="update" value="Salvesta">
   </form>
+  
+  
+  <a href="?id=<?=$_GET["id"];?>&delete=true">kustuta</a>
